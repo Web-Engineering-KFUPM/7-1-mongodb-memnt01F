@@ -185,6 +185,22 @@
  */
 
 // import mongoose
+import mongoose from "mongoose";
+
+const uri = "mongodb+srv://s202360310:reem2005@cluster0.zijoezq.mongodb.net/test";
+
+mongoose
+  .connect(uri)
+  .then(() => console.log("Connected to MongoDB successfully"))
+  .catch((err) => console.log(err));
+
+const studentSchema = new mongoose.Schema({
+  name: String,
+  age: Number,
+  major: String
+});
+
+const Student = mongoose.model("Student", studentSchema);
 
 // establish connection
 
