@@ -212,6 +212,24 @@ async function createStudents() {
 
 createStudents();
 
+async function readStudents() {
+   const all = await Student.find();
+   console.log(all);
+}
+readStudents();
+
+ async function updateStudent() {
+         await Student.updateOne({ name: "Ali" }, { age: 22 });
+         console.log("✅ Updated Ali");
+   }
+   updateStudent();
+
+ async function deleteStudent() {
+         await Student.deleteOne({ name: "Sara" });
+      console.log("✅ Deleted Sara");
+      }
+      deleteStudent();
+
 // establish connection
 
 
